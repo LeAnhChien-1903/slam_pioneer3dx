@@ -1,0 +1,23 @@
+<launch>
+  <!-- start Webots -->
+  <arg name="no_gui" default="false," doc="Start Webots with minimal GUI"/>
+  <include file="$(find webots_ros)/launch/webots.launch">
+    <arg name="mode" value="realtime"/>
+    <arg name="no_gui" value="$(arg no_gui)"/>
+    <arg name="world" value="$(find slam_pioneer3dx)/worlds/slam_pioneer3dx.wbt"/>
+  </include>
+
+  <arg name="auto_close" default="false" doc="Startup mode"/>
+  <!-- Start RVIZ -->
+  <arg name="model" default="$(find slam_pioneer3dx)/urdf/pioneer3dx.urdf"/>
+  <arg name="gui" default="true" />
+  <arg name="rvizconfig" default="$(find slam_pioneer3dx)/rviz/urdf.rviz" />
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+  <!-- Start other package -->
+  <node pkg="slam_pioneer3dx" type="broadcaster" name="broadcaster"/>
+  <node if="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+  <node unless="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+  <node pkg="slam_pioneer3dx" type="slam_pioneer3dx" name="slam_pioneer3dx"/>
+</launch>

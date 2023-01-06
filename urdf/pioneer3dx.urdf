@@ -1,0 +1,414 @@
+<?xml version="1.0"?>
+<robot name="/home/leanhchien/catkin_ws/src/webots_ros/urdf/Pioneer3dx.urdf" xmlns:xacro="http://ros.org/wiki/xacro">
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>  
+  <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>  
+  <material name="green">
+    <color rgba="0 1 0 1"/>
+  </material>  
+  <link name="base_link">
+    <visual>
+      <origin xyz="-0.021 0 0.142" rpy="0 0 -1.570796"/>
+      <geometry>
+        <cylinder radius="0.2" length="0.007"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.021 0 0.142" rpy="0 0 -1.570796"/>
+      <geometry>
+        <cylinder radius="0.2" length="0.007"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.087 0 0.142" rpy="0 0 -1.570796"/>
+      <geometry>
+        <cylinder radius="0.18" length="0.007"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.087 0 0.142" rpy="0 0 -1.570796"/>
+      <geometry>
+        <cylinder radius="0.18" length="0.007"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.114 0 0.112" rpy="0 0 -1.570796"/>
+      <geometry>
+        <cylinder radius="0.15" length="0.05"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.114 0 0.112" rpy="0 0 -1.570796"/>
+      <geometry>
+        <cylinder radius="0.15" length="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.023 0 0.112" rpy="0 0 -1.570796"/>
+      <geometry>
+        <cylinder radius="0.15" length="0.05"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.023 0 0.112" rpy="0 0 -1.570796"/>
+      <geometry>
+        <cylinder radius="0.15" length="0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.04 0 0.0285" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.341 0.2 0.115"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.04 0 0.0285" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.341 0.2 0.115"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.234 0 0.0415" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.039 0.1356 0.007"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.234 0 0.0415" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.039 0.1356 0.007"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.0427 0 0.0285" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.274 0.261 0.115"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0427 0 0.0285" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.274 0.261 0.115"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.1825 0.1029 0.0285" rpy="1.570797 0 -0.780796"/>
+      <geometry>
+        <box size="0.037 0.115 0.044"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.1825 0.1029 0.0285" rpy="1.570797 0 -0.780796"/>
+      <geometry>
+        <box size="0.037 0.115 0.044"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.1825 -0.1029 0.0285" rpy="1.570796 0 -2.360797"/>
+      <geometry>
+        <box size="0.037 0.115 0.044"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.1825 -0.1029 0.0285" rpy="1.570796 0 -2.360797"/>
+      <geometry>
+        <box size="0.037 0.115 0.044"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.1005 0.1019 0.0285" rpy="1.570797 0.000001 -2.270796"/>
+      <geometry>
+        <box size="0.037 0.115 0.047"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.1005 0.1019 0.0285" rpy="1.570797 0.000001 -2.270796"/>
+      <geometry>
+        <box size="0.037 0.115 0.047"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.1005 -0.1019 0.0285" rpy="1.570796 0 -0.870797"/>
+      <geometry>
+        <box size="0.037 0.115 0.047"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.1005 -0.1019 0.0285" rpy="1.570796 0 -0.870797"/>
+      <geometry>
+        <box size="0.037 0.115 0.047"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Hokuyo URG-04LX">
+    <visual>
+      <origin xyz="0 0 -0.017" rpy="1.570741 0.000118 -1.570741"/>
+      <geometry>
+        <box size="0.05 0.07 0.05"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.017" rpy="1.570741 0.000118 -1.570741"/>
+      <geometry>
+        <box size="0.05 0.07 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link_Hokuyo URG-04LX_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="Hokuyo URG-04LX"/>
+    <origin xyz="0.1 0 0.195" rpy="0 0 0"/>
+  </joint>
+  <link name="IMU">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.02"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.05 0.05 0.02"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link_IMU_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="IMU"/>
+    <origin xyz="-0.06 0 0.15" rpy="0 0 0"/>
+  </joint>
+  <link name="so9">
+  </link>
+  <joint name="base_link_so9_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="so9"/>
+    <origin xyz="-0.2041 -0.1194 0.114" rpy="1.570797 0.000001 -2.268928"/>
+  </joint>
+  <link name="so8">
+  </link>
+  <joint name="base_link_so8_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="so8"/>
+    <origin xyz="-0.1549 -0.1373 0.114" rpy="1.570796 0 -1.570796"/>
+  </joint>
+  <link name="so7">
+  </link>
+  <joint name="base_link_so7_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="so7"/>
+    <origin xyz="0.061 -0.1381 0.114" rpy="1.570796 0 -1.570796"/>
+  </joint>
+  <link name="so6">
+  </link>
+  <joint name="base_link_so6_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="so6"/>
+    <origin xyz="0.1103 -0.1201 0.114" rpy="1.570796 0 -0.872665"/>
+  </joint>
+  <link name="so5">
+  </link>
+  <joint name="base_link_so5_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="so5"/>
+    <origin xyz="0.1455 -0.078 0.114" rpy="1.570796 0 -0.523597"/>
+  </joint>
+  <link name="so4">
+  </link>
+  <joint name="base_link_so4_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="so4"/>
+    <origin xyz="0.1642 -0.0264 0.114" rpy="1.570797 0 -0.174536"/>
+  </joint>
+  <link name="so3">
+  </link>
+  <joint name="base_link_so3_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="so3"/>
+    <origin xyz="0.1642 0.0285 0.114" rpy="1.570797 0 0.174534"/>
+  </joint>
+  <link name="so2">
+  </link>
+  <joint name="base_link_so2_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="so2"/>
+    <origin xyz="0.1455 0.0801 0.114" rpy="1.570796 0 0.523604"/>
+  </joint>
+  <link name="so15">
+  </link>
+  <joint name="base_link_so15_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="so15"/>
+    <origin xyz="-0.1549 0.1403 0.114" rpy="1.570796 0 1.5708"/>
+  </joint>
+  <link name="so14">
+  </link>
+  <joint name="base_link_so14_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="so14"/>
+    <origin xyz="-0.2041 0.1224 0.114" rpy="1.570796 0.000001 2.268929"/>
+  </joint>
+  <link name="so13">
+  </link>
+  <joint name="base_link_so13_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="so13"/>
+    <origin xyz="-0.2392 0.0804 0.114" rpy="1.570796 -0.000001 2.617988"/>
+  </joint>
+  <link name="so12">
+  </link>
+  <joint name="base_link_so12_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="so12"/>
+    <origin xyz="-0.2578 0.0289 0.114" rpy="1.570796 0 2.967059"/>
+  </joint>
+  <link name="so11">
+  </link>
+  <joint name="base_link_so11_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="so11"/>
+    <origin xyz="-0.2578 -0.0259 0.114" rpy="1.570796 0 -2.967056"/>
+  </joint>
+  <link name="so10">
+  </link>
+  <joint name="base_link_so10_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="so10"/>
+    <origin xyz="-0.2392 -0.0774 0.114" rpy="1.570796 0 -2.617996"/>
+  </joint>
+  <link name="so1">
+  </link>
+  <joint name="base_link_so1_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="so1"/>
+    <origin xyz="0.1103 0.1223 0.114" rpy="1.570797 0 0.872664"/>
+  </joint>
+  <link name="so0">
+  </link>
+  <joint name="base_link_so0_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="so0"/>
+    <origin xyz="0.061 0.1402 0.114" rpy="1.570796 0 1.570795"/>
+  </joint>
+  <joint name="right wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="right wheel"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="10" velocity="12.3"/>
+    <origin xyz="0 -0.165 0" rpy="1.570796 0 -1.570796"/>
+  </joint>
+  <link name="right wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="-1.570796 0 1.5708"/>
+      <geometry>
+        <cylinder radius="0.0975" length="0.01"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-1.570796 0 1.5708"/>
+      <geometry>
+        <cylinder radius="0.0975" length="0.01"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="-1.570796 0 1.5708"/>
+      <geometry>
+        <cylinder radius="0.07" length="0.048"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-1.570796 0 1.5708"/>
+      <geometry>
+        <cylinder radius="0.07" length="0.048"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="left wheel"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="10" velocity="12.3"/>
+    <origin xyz="0 0.165 0" rpy="1.570796 0 -1.570796"/>
+  </joint>
+  <link name="left wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="-1.570796 0 1.5708"/>
+      <geometry>
+        <cylinder radius="0.0975" length="0.01"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-1.570796 0 1.5708"/>
+      <geometry>
+        <cylinder radius="0.0975" length="0.01"/>
+      </geometry>
+      <material name="black"/>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="-1.570796 0 1.5708"/>
+      <geometry>
+        <cylinder radius="0.07" length="0.048"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-1.570796 0 1.5708"/>
+      <geometry>
+        <cylinder radius="0.07" length="0.048"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="CASTER_WHEEL" type="continuous">
+    <parent link="base_link"/>
+    <child link="caster wheel"/>
+    <axis xyz="0 1 0"/>
+    <origin xyz="-0.1918 0 0" rpy="1.570796 0 -1.570796"/>
+  </joint>
+  <link name="caster wheel">
+    <visual>
+      <origin xyz="0 -0.032 0.0031" rpy="1.25 0 0"/>
+      <geometry>
+        <box size="0.05 0.028 0.067"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.032 0.0031" rpy="1.25 0 0"/>
+      <geometry>
+        <box size="0.05 0.028 0.067"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="casterWheelRim" type="continuous">
+    <parent link="caster wheel"/>
+    <child link="solid"/>
+    <axis xyz="1 0 0"/>
+    <origin xyz="0 -0.052101 0.012843" rpy="-0.013699 0 0"/>
+  </joint>
+  <link name="solid">
+    <visual>
+      <origin xyz="0 0 0" rpy="-1.570796 0 1.5708"/>
+      <geometry>
+        <cylinder radius="0.0375" length="0.025"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-1.570796 0 1.5708"/>
+      <geometry>
+        <cylinder radius="0.0375" length="0.025"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
