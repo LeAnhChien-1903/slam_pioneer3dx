@@ -124,7 +124,7 @@ include_directories(
 
 ## Declare a C++ library
 add_library(${PROJECT_NAME}
-  src/enable_sensor.cpp
+  src/slam_pioneer3dx.cpp
 )
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
 ## Add cmake target dependencies of the library
