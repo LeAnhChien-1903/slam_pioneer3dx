@@ -30,12 +30,12 @@ class SensorEnable
         webots_ros::set_int setTimeStepSrv;
         webots_ros::set_float setInfSrv;
         webots_ros::set_float setZeroSrv;
-        std::vector<ros::ServiceClient> velocityClient;
-        webots_ros::set_float leftWheelSrv;
-        webots_ros::set_float rightWheelSrv;
         ros::Subscriber cmd_vel_sub;
         float linear_vel, angular_vel;
     public:
+        std::vector<ros::ServiceClient> velocityClient;
+        webots_ros::set_float leftWheelSrv;
+        webots_ros::set_float rightWheelSrv;
         SensorEnable(ros::NodeHandle*  node);
         void nameCallback(const std_msgs::String& msg);
         void keyboardCallback(const webots_ros::Int32Stamped& msg);
@@ -43,10 +43,8 @@ class SensorEnable
         void InitializeSensors();// function for  initializing sensors
         void teleop(int); // Function for teleop 
 };
-#include "slam_pioneer3dx/enable_sensor.h"
-SensorEnable::SensorEnable(ros::NodeHandle * nodeHandle)
+SensorEnable::SensorEnable(ros::NodeHandle * nodeHandle):node(*nodeHandle)
 {
-    node = *nodeHandle;
     setTimeStepSrv.request.value = TIME_STEP;// for all sensors
     setInfSrv.request.value = INFINITY; // for all positions of motors
     setZeroSrv.request.value = 0.0; // for all velocity of motors
