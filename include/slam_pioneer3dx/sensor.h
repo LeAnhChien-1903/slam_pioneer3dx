@@ -11,6 +11,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <geometry_msgs/Twist.h>
+
+#define TIME_STEP 32
 // Distance sensor
 #define numOfDistanceSensors 8
 #define so0 0;
@@ -34,11 +36,14 @@ class Sensor
 };
 Sensor::Sensor(ros::NodeHandle * nodeHandle):node(*nodeHandle)
 {
+    setTimeStepSrv.request.value = TIME_STEP;
 }
 void Sensor::initializeSensors()
 {
-    std::vector<std::string> sensors{"/Lidar", "/IU", "/keyboard","/so0", "/so1", "/so2", 
+    std::vector<std::string> sensors{"/Lidar", "/IU","/so0", "/so1", "/so2", 
                                     "/so3", "/so4", "/so5", "/so6", "/so7",
+                                    "/so8", "/so9", "/so10", "/so11", "/so12",
+                                    "/so13", "/so14", "/so15",
                                     "/right_wheel_sensor", "/left_wheel_sensor"};
     std::vector<ros::ServiceClient> sensorsClient;
     for (auto sensor = sensors.begin();   sensor != sensors.end(); ++sensor)
