@@ -206,6 +206,13 @@
     <child link="gps"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
+  <joint name="right wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="right wheel"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="10" velocity="12.3"/>
+    <origin xyz="0 -0.165 0" rpy="1.570796 0 -1.570796"/>
+  </joint>
   <link name="right wheel">
     <visual>
       <origin xyz="0 0 0" rpy="-1.570796 0 1.5708"/>
@@ -233,7 +240,6 @@
       </geometry>
     </collision>
   </link>
-  
   <joint name="left wheel" type="continuous">
     <parent link="base_link"/>
     <child link="left wheel"/>
