@@ -1,9 +1,8 @@
-#include "slam_pioneer3dx/sensor.h"
-#include "slam_pioneer3dx/motor.h"
-
+#include "slam_pioneer3dx/Robot.h"
 //Global variables
 ros::ServiceClient setTimeStepClient;
 webots_ros::set_int setTimeStepSrv;
+float speed = 1;
 static int step = TIME_STEP;
 void quit(int);
 int main(int argc, char** argv)
@@ -12,21 +11,9 @@ int main(int argc, char** argv)
     ros::NodeHandle node;
 
     signal(SIGINT, quit);
-    Sensor sensors(&node);
-    Motor motor(&node);
-    sensors.initializeSensors();
-    motor.initializeMotor();
-    while (node.ok())
-    {
-        motor.runMotor(1, 1);
-    }
-    // tells Webots this node will stop using time_step service
-    setTimeStepSrv.request.value = 0;
-    if (setTimeStepClient.call(setTimeStepSrv) && setTimeStepSrv.response.success)
-        ROS_INFO("Robot's time step updated to end simulation.");
-    else
-        ROS_ERROR("Failed to call service time_step to end simulation.");
-    ros::shutdown();
+    Robot robot(&node);
+    ros::Timer timer = node.createTimer(ros::Duration(1.0 / 10.0), std::bind(&Robot::timerCallback,robot));
+    ros::spin();
     return 0;
 }
 void quit(int sig)
